@@ -6,29 +6,22 @@ const db = require('../index.js');
 // user can be student and Instructor;
   // where each will have different set of previledges
 
-const User = db.define('user', {
+module.exports = db.define('location', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  email: {
+  photo: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
-  },
-  userType: {
-    type: Sequelize.ENUM,
-    values: ['Student', 'Instructor', 'Administrator'],
-    allowNull: false,
-    defaultValue: 'Student'
+    defaultValue: '/public/ugaArch.jpg'
   },
   details: {
     type: Sequelize.TEXT
   },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false
+  locationType: {
+    type: Sequelize.ENUM,
+    values: ['Campus', 'Main Office', 'Office Branch', 'Event'],
+    allowNull: false,
+    defaultValue: 'Campus'
   }
-})
-
-module.exports = User;
+});
