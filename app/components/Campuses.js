@@ -9,9 +9,9 @@ export default function Campuses (props) {
   return (
     <div id="campuses" className="container-fluid">
       <div className="col-xs-2">
-        <h2>Campuses</h2>
+        <h3>Campuses</h3>
         <div>
-          {campuses.map(campus => {
+          {campuses && campuses.map(campus => {
             return (
               <li key={campus.id}>
                 <Link to={`/campuses/${campus.id}`}>

@@ -2,7 +2,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router, hashHistory, Route, IndexRedirect } from 'react-router'
+import { Router, hashHistory, Route, IndexRedire, IndexRoute } from 'react-router' // (IndexRedire)
 
 import { fetchStudents } from './action-creators/students';
 import { fetchStudent } from './action-creators/student';
@@ -38,13 +38,14 @@ const onCampusEnter = function(nextRouterState) {
 render (
   <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path="/" component={ App } />
-      <Route path="/home" component={ Home } />
-      <Route path="/students" component={ StudentsContainer } onEnter={onStudentsEnter} />
-      <Route path="/students/:studentId" component={StudentContainer} onEnter={onStudentEnter} />
-      <Route path="/campuses" component={ CampusesContainer } onEnter={onCampusesEnter} />
-      <Route path="/campuses/:campusId" component={CampusContainer} onEnter={onCampusEnter} />
-
+      <Route path="/" component={ App }  onEnter={onCampusesEnter} >
+        <IndexRoute component={CampusesContainer} />
+        <Route path="/home" component={ Home } />
+        <Route path="/students" component={ StudentsContainer } onEnter={onStudentsEnter} />
+        <Route path="/students/:studentId" component={StudentContainer} onEnter={onStudentEnter} />
+        <Route path="/campuses" component={ CampusesContainer } />
+        <Route path="/campuses/:campusId" component={CampusContainer} onEnter={onCampusEnter} />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('main')

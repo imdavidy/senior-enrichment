@@ -6,7 +6,7 @@ import Campuses from './Campuses'
 
 export default function Home (props) {
   return (
-    <div id="Home" className="container-fluid">
+    <div id="navbar" className="container-fluid">
       <div className="nav">
 
       </div>

@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
-
+import CampusesContainer from '../containers/CampusesContainer';
 
 export default function App (props) {
   return (
-    <div id="main" className="container-fluid">
-      <div className="col-xs-2">
-
-      </div>
-      <div className="col-xs-10">
-
+    <div className="col-lg-12">
+      <nav id="main" className="navbar navbar-nav">
+        <h4> Welcome to Margaret Hamilton Interplanetary Academy of JavaScript</h4>
+        <button> Home </button>
+        <button> Students </button>
+      </nav>
+      <div>
+        { props.children }
       </div>
     </div>
   );
