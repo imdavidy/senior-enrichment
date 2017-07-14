@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Students from '../components/Students';
-import {removeStudent} from '../action-creators/student'
+import {removeStudent, addUser} from '../action-creators/student'
 
 const mapStateToProps = (state) => {
   return {
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     removeStudent: (studentId) => {
       dispatch(removeStudent(studentId));
+    },
+    addUser: (newUser) => {
+      dispatch(addUser(newUser))
     }
   }
 }

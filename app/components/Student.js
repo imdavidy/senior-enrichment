@@ -16,6 +16,7 @@ export default function Student (props) {
             <div>Student ID: {currentStudent.id} </div>
             <div>Name: <span>{currentStudent.name}</span></div>
             <div>School id: {currentStudent.locationId}</div>
+            <div>School name: {currentStudent.locationId}</div>
           </h4>
         </div>
       </div>

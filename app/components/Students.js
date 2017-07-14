@@ -44,13 +44,16 @@ export default class Students extends Component {
       console.log("PASSWORD", this.state.password)
     }
   handleLocationChange(event) {
-      this.setState({ location: event.target.value });
-      console.log("LOCATION", this.state.locationId)
+    console.log("=====================> ", event.target.value)
+      this.setState({ locationId: event.target.value });
+      console.log("LOCATION", this.state)
     }
 
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state)
+    console.log('SUBMIT', this.state)
+    this.props.addUser(this.state)
   }
 
  render(){

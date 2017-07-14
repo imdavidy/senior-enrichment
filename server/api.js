@@ -77,10 +77,10 @@ api.post('/student', (req, res, next) => {
   email: req.body.email,
   userType: req.body.userType,
   details: req.body.details,
-  password: req.body.password
+  password: req.body.password,
+  locationId: req.body.locationId
 })
 .then(createdStudent => {
-  createdStudent.setLocation(1);
   res.status(201).send(createdStudent);
 })
 .catch(next);

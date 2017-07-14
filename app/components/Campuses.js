@@ -15,14 +15,15 @@ export default function Campuses (props) {
             return (
               <li key={campus.id}>
                 <Link to={`/campuses/${campus.id}`}>
-                  {/* <img src='ugaArch.jpg' height="140"/> */}
-                  <span>{campus.name}</span>
+                  <img src='ugaArch.jpg' height="140"/>
+                  <span>&nbsp;{campus.name}</span>
                 </Link>
                 <span className="campuses">
                   <Link to={`/campuses/${campus.locationId}`}>
                     {campus.locationId}
                   </Link>
                 </span>
+                <p>&nbsp;</p>
               </li>
             );
           })}
