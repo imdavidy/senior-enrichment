@@ -1,5 +1,6 @@
 import {
-  GET_USERS
+  GET_USERS,
+  DELETE_USER
 } from '../constants';
 
 const initialStudentsState = {
@@ -12,6 +13,10 @@ export default function (state = initialStudentsState, action) {
   switch (action.type) {
 
     case GET_USERS:
+      newState.studentsList = action.studentsList;
+      break;
+
+    case DELETE_USER:
       newState.studentsList = action.studentsList;
       break;
 

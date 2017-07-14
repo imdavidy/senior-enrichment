@@ -8,14 +8,14 @@ export default function Campuses (props) {
   console.log('Campuses: ', campuses)
   return (
     <div id="campuses" className="container-fluid">
-      <div className="col-xs-2">
+      <div>
         <h3>Campuses</h3>
         <div>
           {campuses && campuses.map(campus => {
             return (
               <li key={campus.id}>
                 <Link to={`/campuses/${campus.id}`}>
-                  <img src='ugaArch.jpg' height="240"/>
+                  {/* <img src='ugaArch.jpg' height="140"/> */}
                   <span>{campus.name}</span>
                 </Link>
                 <span className="campuses">

@@ -39,12 +39,11 @@ render (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={ App }  onEnter={onCampusesEnter} >
-        <IndexRoute component={CampusesContainer} />
-        <Route path="/home" component={ Home } />
         <Route path="/students" component={ StudentsContainer } onEnter={onStudentsEnter} />
         <Route path="/students/:studentId" component={StudentContainer} onEnter={onStudentEnter} />
         <Route path="/campuses" component={ CampusesContainer } />
         <Route path="/campuses/:campusId" component={CampusContainer} onEnter={onCampusEnter} />
+        <IndexRoute component={CampusesContainer} />
       </Route>
     </Router>
   </Provider>,

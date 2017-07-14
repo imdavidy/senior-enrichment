@@ -9,10 +9,14 @@ export default function Student (props) {
   const studentId = props.params.studentId;
   return (
     <div id="student" className="container-fluid">
-      <div className="col-xs-2">
-        <h2>Student Information</h2>
+      <div className="col-lg-12">
+        <h3>Student Information</h3>
         <div>
-          <h4>{currentStudent.id}  {currentStudent.name}</h4>
+          <h4>
+            <div>Student ID: {currentStudent.id} </div>
+            <div>Name: <span>{currentStudent.name}</span></div>
+            <div>School id: {currentStudent.locationId}</div>
+          </h4>
         </div>
       </div>
       <div className="col-xs-10">

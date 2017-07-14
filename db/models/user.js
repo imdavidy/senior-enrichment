@@ -6,7 +6,7 @@ const db = require('../index.js');
 // user can be student and Instructor;
   // where each will have different set of previledges
 
-const User = db.define('user', {
+module.exports = db.define('user', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -30,5 +30,3 @@ const User = db.define('user', {
     allowNull: false
   }
 })
-
-module.exports = User;

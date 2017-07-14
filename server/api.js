@@ -71,18 +71,6 @@ api.get('/students/:studentId/campuses', (req, res, next) => {
 
 //==============  POST Routes =================
 
-api.post('/campus', (req, res, next) => {
-  Location.create({
-  name: req.body.name,
-  photo: req.body.photo,
-  details: req.body.details,
-  locationType: req.body.locationType
-})
-.then(createdLocation => {
-  res.status(201).send(createdLocation);
-})
-.catch(next);
-})
 api.post('/student', (req, res, next) => {
   User.create({
   name: req.body.name,
@@ -94,6 +82,19 @@ api.post('/student', (req, res, next) => {
 .then(createdStudent => {
   createdStudent.setLocation(1);
   res.status(201).send(createdStudent);
+})
+.catch(next);
+})
+
+api.post('/campus', (req, res, next) => {
+  Location.create({
+  name: req.body.name,
+  photo: req.body.photo,
+  details: req.body.details,
+  locationType: req.body.locationType
+})
+.then(createdLocation => {
+  res.status(201).send(createdLocation);
 })
 .catch(next);
 })
@@ -172,7 +173,7 @@ api.delete('/students/:studentId', (req, res, next) => {
   }
 })
 .then(destroyedUser => {
-  if(destroyedUser) res.status(204).redirect('/')
+  if(destroyedUser) res.sendStatus(204)
   else res.sendStatus(404);
 })
 .catch(next);

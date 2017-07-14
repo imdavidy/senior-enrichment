@@ -10,8 +10,8 @@ export const fetchStudents = () => {
   return dispatch => {
     axios.get('/api/students')
     .then(results => results.data)
-    .then(results => {
-      dispatch(getStudents(results))
+    .then(students => {
+      dispatch(getStudents(students))
     });
   };
 }

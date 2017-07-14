@@ -1,5 +1,6 @@
 import { GET_USER } from '../constants';
 import axios from 'axios';
+import { fetchStudents } from './students'
 
 export const getStudent = student => ({
   type: GET_USER,
@@ -14,4 +15,14 @@ export const fetchStudent = studentId => {
       dispatch(getStudent(result))
     });
   };
+}
+
+export const removeStudent = studentId => {
+  return dispatch => {
+    axios.delete(`/api/students/${studentId}`)
+    .then(result => result.data)
+    .then(result => {
+      dispatch(fetchStudents())
+    })
+  }
 }
